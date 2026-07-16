@@ -5,9 +5,9 @@ export const profile = {
     'Diseño y construyo la lógica que hace funcionar las aplicaciones: APIs, servicios y bases de datos. Me muevo con soltura en el frontend con React, pero mi terreno es el backend.',
   location: 'España',
   availability: 'Abierto a nuevas oportunidades',
-  email: 'alex@example.com', // TODO: email real
-  github: 'https://github.com/alex', // TODO: usuario real
-  linkedin: 'https://www.linkedin.com/in/alex', // TODO: perfil real
+  email: 'alex.cjdev@gmail.com',
+  github: 'https://github.com/alexcil97',
+  linkedin: 'https://www.linkedin.com/in/alex-cil-jim/'
 }
 
 export const about = {
