@@ -53,13 +53,20 @@ export function Projects() {
         <p className="section-kicker">03. Proyectos</p>
         <h2 className="section-title">Cosas que he construido</h2>
         <div className="projects-grid">
-          {projects.map((project) => (
-            <article key={project.title} className="project-card">
+          {projects.map((project, i) => (
+            <article
+              key={project.title}
+              className="project-card reveal-item"
+              style={{ animationDelay: `${i * 110}ms` }}
+            >
               <div className="project-top">
                 <span className="project-icon">
                   <FolderIcon />
                 </span>
                 <div className="project-links">
+                  {project.period && (
+                    <span className="project-period">{project.period}</span>
+                  )}
                   {project.repo && (
                     <a
                       href={project.repo}

@@ -1,14 +1,19 @@
 import { profile } from '../data/profile'
 
-const mainStack = ['PHP', 'Java · Spring', 'Python · FastAPI', 'React']
+const mainStack = ['PHP', 'Java · Spring', 'Python · FastAPI', 'C# · .NET', 'React', 'Docker']
 
 export function Hero() {
   return (
     <section id="inicio" className="hero">
-      <div className="container hero-grid">
+      <div className="container">
+        <div className="hero-grid">
         <div>
+          <p className="hero-badge">
+            <span className="pulse-dot" />
+            {profile.availability}
+          </p>
           <p className="hero-kicker">Hola, soy</p>
-          <h1 className="hero-title">{profile.name}</h1>
+          <h1 className="hero-title">{profile.displayName}</h1>
           <p className="hero-role">
             Desarrollador <strong>Backend</strong> · Full Stack
           </p>
@@ -88,10 +93,27 @@ export function Hero() {
               <span className="t-plain">    {'}'}</span>
               {'\n\n'}
               <span className="t-comment"># uvicorn main:app --reload ✓</span>
+              <span className="t-cursor" />
             </code>
           </pre>
         </div>
+        </div>
       </div>
+      <a href="#sobre-mi" className="hero-scroll" aria-label="Bajar a la sección Sobre mí">
+        <svg
+          width="26"
+          height="26"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </a>
     </section>
   )
 }

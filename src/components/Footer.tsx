@@ -7,7 +7,7 @@ export function Footer() {
         <p>
           Diseñado y construido por{' '}
           <a href={profile.github} target="_blank" rel="noreferrer">
-            {profile.name}
+            {profile.fullName}
           </a>{' '}
           · React + TypeScript
         </p>

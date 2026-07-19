@@ -1,26 +1,37 @@
+// ============================================================
+// Todo el contenido del portfolio se edita en este archivo.
+// Datos extraídos del CV (public/CV_Alejandro_Cil_Backend_Junior.docx).
+// ============================================================
+
 export const profile = {
   name: 'Alex',
+  displayName: 'Alejandro Cil',
+  fullName: 'Alejandro Cil Jiménez',
   role: 'Desarrollador Backend · Full Stack',
   tagline:
     'Diseño y construyo la lógica que hace funcionar las aplicaciones: APIs, servicios y bases de datos. Me muevo con soltura en el frontend con React, pero mi terreno es el backend.',
-  location: 'España',
+  location: 'Madrid, España',
   availability: 'Abierto a nuevas oportunidades',
   email: 'alex.cjdev@gmail.com',
   github: 'https://github.com/alexcil97',
-  linkedin: 'https://www.linkedin.com/in/alex-cil-jim/'
+  linkedin: 'https://www.linkedin.com/in/alex-cil-jim',
+  /** Archivo del CV dentro de public/, descargable desde la web */
+  cvFile: '/CV_Alejandro_Cil_Backend_Junior.docx',
 }
 
 export const about = {
   paragraphs: [
-    'Soy desarrollador con vocación clara por el backend: me interesa cómo se estructura una aplicación por dentro, cómo se modelan los datos y cómo se exponen a través de APIs limpias y bien documentadas.',
-    'Trabajo con tres lenguajes de servidor: PHP, donde tengo mi base más sólida; Java con el ecosistema Spring; y Python con FastAPI para construir APIs modernas y rápidas.',
-    'Aunque el backend es mi foco, disfruto del desarrollo full stack: con React puedo cerrar el círculo y llevar un proyecto desde la base de datos hasta la interfaz.',
+    'Soy Alejandro Cil —Alex—, desarrollador backend de Madrid. Me interesa cómo se estructura una aplicación por dentro: el modelado de los datos, la lógica de negocio y las APIs que lo exponen todo de forma limpia y bien documentada.',
+    'He trabajado profesionalmente en el backend de MyDance, una red social profesional, con .NET 7 y Entity Framework Core sobre SQL, en un equipo multidisciplinar con Docker y Git. Además trabajo con PHP —mi base más sólida—, Java con Spring y Python con FastAPI.',
+    'Aunque el backend es mi foco, disfruto del desarrollo full stack: con React y Next.js he llevado proyectos propios como Netgram hasta producción. Actualmente sigo creciendo mientras curso el CFGS de Desarrollo de Aplicaciones Multiplataforma.',
   ],
   quickFacts: [
     { label: 'Foco', value: 'Backend' },
     { label: 'Perfil', value: 'Full Stack' },
     { label: 'Ubicación', value: profile.location },
-    { label: 'Estado', value: profile.availability },
+    { label: 'Formación', value: 'CFGS DAM (en curso)' },
+    { label: 'Idiomas', value: 'Español · Inglés (B1)' },
+    { label: 'Estado', value: 'Disponible' },
   ],
 }
 
@@ -47,6 +58,7 @@ export const skillGroups: SkillGroup[] = [
       { name: 'PHP', detail: 'Base sólida · POO, APIs, integración con MySQL', level: 90 },
       { name: 'Java', detail: 'Spring · Spring Boot, servicios REST', level: 80 },
       { name: 'Python', detail: 'FastAPI · APIs asíncronas, Pydantic, OpenAPI', level: 80 },
+      { name: 'C#', detail: '.NET 7 · ASP.NET MVC, EF Core — experiencia profesional', level: 75 },
     ],
   },
   {
@@ -54,17 +66,18 @@ export const skillGroups: SkillGroup[] = [
     description: 'Lo necesario para cerrar el círculo full stack.',
     skills: [
       { name: 'React', detail: 'Componentes, hooks, consumo de APIs', level: 75 },
-      { name: 'JavaScript / TypeScript', detail: 'ES moderno, tipado', level: 70 },
-      { name: 'HTML y CSS', detail: 'Maquetación responsive', level: 70 },
+      { name: 'TypeScript / JavaScript', detail: 'ES moderno, tipado · Next.js', level: 70 },
+      { name: 'HTML y CSS', detail: 'Maquetación responsive, semántica y accesible', level: 70 },
     ],
   },
   {
     title: 'Herramientas',
     description: 'El día a día alrededor del código.',
     skills: [
-      { name: 'SQL', detail: 'MySQL · PostgreSQL, modelado y consultas', level: 80 },
-      { name: 'Git y GitHub', detail: 'Control de versiones, flujo de ramas', level: 80 },
-      { name: 'APIs REST', detail: 'Diseño, documentación y pruebas', level: 85 },
+      { name: 'Docker', detail: 'Contenerización de entornos en proyectos reales', level: 75 },
+      { name: 'SQL', detail: 'MySQL · PostgreSQL · EF Core, Prisma ORM', level: 80 },
+      { name: 'Git y GitHub', detail: 'Control de versiones y trabajo en equipo', level: 80 },
+      { name: 'APIs REST', detail: 'Diseño y pruebas · Swagger, Postman', level: 85 },
     ],
   },
 ]
@@ -73,39 +86,72 @@ export type Project = {
   title: string
   description: string
   stack: string[]
+  period?: string
   repo?: string
   demo?: string
 }
 
-// TODO: sustituir por proyectos reales de Alex
 export const projects: Project[] = [
   {
-    title: 'API de gestión de tareas',
+    title: 'Netgram',
     description:
-      'API REST construida con FastAPI: autenticación con JWT, validación con Pydantic, base de datos PostgreSQL y documentación automática con OpenAPI.',
-    stack: ['Python', 'FastAPI', 'PostgreSQL', 'JWT'],
-    repo: 'https://github.com/alex/proyecto-fastapi',
+      'Red social full-stack desarrollada de principio a fin: TypeScript y Next.js, base de datos relacional modelada con Prisma ORM y despliegue en producción en Vercel.',
+    stack: ['TypeScript', 'Next.js', 'Prisma', 'Vercel'],
+    period: 'Mar – Jun 2024',
   },
   {
-    title: 'Servicio de pedidos',
+    title: 'Curso de Python',
     description:
-      'Servicio backend con Spring Boot: capas bien separadas (controlador, servicio, repositorio), persistencia con JPA y tests de integración.',
-    stack: ['Java', 'Spring Boot', 'JPA', 'MySQL'],
-    repo: 'https://github.com/alex/proyecto-spring',
+      'Curso estructurado de Python orientado a la lógica de programación, con proyectos prácticos progresivos y ejercicios diseñados para facilitar el aprendizaje autónomo.',
+    stack: ['Python', 'Docencia'],
+    period: 'Feb – Abr 2025',
   },
   {
-    title: 'Plataforma de reservas',
+    title: 'Portfolio personal',
     description:
-      'Aplicación web en PHP con arquitectura MVC: gestión de usuarios, panel de administración y consultas optimizadas sobre MySQL.',
-    stack: ['PHP', 'MVC', 'MySQL'],
-    repo: 'https://github.com/alex/proyecto-php',
+      'Web responsiva con HTML5 y CSS3, con estructura semántica optimizada para buscadores y accesibilidad.',
+    stack: ['HTML5', 'CSS3', 'SEO'],
+    period: 'Ene 2025',
+  },
+]
+
+export type TimelineItem = {
+  title: string
+  place: string
+  period?: string
+  bullets?: string[]
+  tags?: string[]
+}
+
+export const experience: TimelineItem[] = [
+  {
+    title: 'Desarrollador Web Backend',
+    place: 'MyDance · Red social profesional',
+    period: 'Mar 2024 – Jun 2024',
+    bullets: [
+      'Desarrollo y mantenimiento del backend con .NET 7 (ASP.NET MVC) y Entity Framework Core sobre base de datos SQL.',
+      'Diseño del modelo de datos y de la lógica de negocio, asegurando la integración con el frontend.',
+      'Contenerización del entorno con Docker y control de versiones con Git en equipo.',
+      'Diseño y ejecución de pruebas funcionales de los endpoints con Swagger y Postman.',
+      'Colaboración con desarrolladores y diseñadores en un equipo multidisciplinar.',
+    ],
+    tags: ['.NET 7', 'EF Core', 'SQL', 'Docker', 'Git'],
+  },
+]
+
+export const education: TimelineItem[] = [
+  {
+    title: 'CFGS · Desarrollo de Aplicaciones Multiplataforma (DAM)',
+    place: 'Centro Gabriel García Márquez, Madrid',
+    period: '2025 – actualidad',
   },
   {
-    title: 'Dashboard de administración',
-    description:
-      'Frontend en React que consume una API propia: rutas protegidas, gráficas de actividad y gestión de estado con hooks.',
-    stack: ['React', 'TypeScript', 'API REST'],
-    repo: 'https://github.com/alex/proyecto-react',
+    title: 'CFGS · Desarrollo de Aplicaciones Web (DAW)',
+    place: 'Centro Enrique Tierno Galván, Madrid',
+  },
+  {
+    title: 'CFGS · Mantenimiento Electrónico y Robótica',
+    place: 'Centro Julio Verne, Leganés',
   },
 ]
 
@@ -113,5 +159,6 @@ export const navLinks = [
   { label: 'Sobre mí', href: '#sobre-mi' },
   { label: 'Habilidades', href: '#habilidades' },
   { label: 'Proyectos', href: '#proyectos' },
+  { label: 'Trayectoria', href: '#trayectoria' },
   { label: 'Contacto', href: '#contacto' },
 ]
